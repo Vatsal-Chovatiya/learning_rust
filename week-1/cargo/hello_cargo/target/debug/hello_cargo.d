@@ -1,0 +1,1 @@
+/Users/vatsalchovatiya55gmail.com/Desktop/workspace/code/learning_rust/week-1/cargo/hello_cargo/target/debug/hello_cargo: /Users/vatsalchovatiya55gmail.com/Desktop/workspace/code/learning_rust/week-1/cargo/hello_cargo/src/main.rs
