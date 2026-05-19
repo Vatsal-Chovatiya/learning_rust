@@ -11,6 +11,11 @@ fn main() {
         String::from("someexample@gmail.com"),
         String::from("someone"),
     );
+
+     let user2 = User {
+        email: String::from("another@example.com"),
+        ..user1
+    };
     
     // Silence the unused variable warning by doing something with it
     println!("User email: {}", user1.email);
