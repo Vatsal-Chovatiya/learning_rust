@@ -1,12 +1,15 @@
-struct Ipv4Addr {
-    // --snip--
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
 }
 
-struct Ipv6Addr {
-    // --snip--
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+    }
 }
 
-enum IpAddr {
-    V4(Ipv4Addr),
-    V6(Ipv6Addr),
-}
+let m = Message::Write(String::from("hello"));
+m.call();
