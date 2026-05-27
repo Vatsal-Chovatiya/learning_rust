@@ -1,9 +1,5 @@
-// --snip--
-use std::cmp::Ordering;
 use std::io;
-// --snip--
+use std::io::Write;
 
 
-// --snip--
-use std::{cmp::Ordering, io};
-// --snip--
+use std::io::{self, Write};
