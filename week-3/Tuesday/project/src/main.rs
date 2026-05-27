@@ -1,10 +1,9 @@
-use std::fmt::Result;
-use std::io::Result as IoResult;
+// --snip--
+use std::cmp::Ordering;
+use std::io;
+// --snip--
 
-fn function1() -> Result {
-    // --snip--
-}
 
-fn function2() -> IoResult<()> {
-    // --snip--
-}
+// --snip--
+use std::{cmp::Ordering, io};
+// --snip--
