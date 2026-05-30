@@ -1,14 +1,5 @@
 fn main() {
-    enum SpreadsheetCell {
-        Int(i32),
-        Float(f64),
-        Text(String),
-    }
-
-    let row = vec![
-        SpreadsheetCell::Int(3),
-        SpreadsheetCell::Text(String::from("blue")),
-        SpreadsheetCell::Float(10.12),
-    ];
-
+    let mut s = String::from("foo");
+s.push_str("bar"); // Adds three letters at once
+// 's' is now "foobar"
 }
