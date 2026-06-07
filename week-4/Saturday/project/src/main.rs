@@ -1,3 +1,4 @@
-fn main() {
-    panic!("crash and burn");
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
 }
