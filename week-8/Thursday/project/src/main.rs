@@ -1,14 +1,6 @@
-use aggregator::{SocialPost, Summary};
-
-fn main() {
-    let post = SocialPost {
-        username: String::from("horse_ebooks"),
-        content: String::from(
-            "of course, as you probably already know, people",
-        ),
-        reply: false,
-        repost: false,
-    };
-
-    println!("1 new post: {}", post.summarize());
+pub trait Summary {
+    // Instead of ending with a semicolon, we provide a block of code
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
 }
