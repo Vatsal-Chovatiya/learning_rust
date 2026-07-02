@@ -1,24 +1,34 @@
 pub trait Summary {
-    // Instead of ending with a semicolon, we provide a block of code
+    // This method has NO default implementation. It is strictly required.
+    fn summarize_author(&self) -> String;
+
+    // This method HAS a default implementation.
+    // Notice how it calls the required summarize_author method!
     fn summarize(&self) -> String {
-        String::from("(Read more...)")
+        format!("(Read more from {}...)", self.summarize_author())
     }
 }
 
-// An empty impl block means we are using the default summarize method
-impl Summary for NewsArticle {}
+
+impl Summary for SocialPost {
+    // We only write the required method
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.username)
+    }
+    // summarize is automatically provided by the trait's default implementation
+}
 
 fn main() {
-    let article = NewsArticle {
-        headline: String::from("Penguins win the Stanley Cup Championship!"),
-        location: String::from("Pittsburgh, PA, USA"),
-        author: String::from("Iceburgh"),
+    let post = SocialPost {
+        username: String::from("horse_ebooks"),
         content: String::from(
-            "The Pittsburgh Penguins once again are the best \
-             hockey team in the NHL.",
+            "of course, as you probably already know, people",
         ),
+        reply: false,
+        repost: false,
     };
 
-    // We can still call summarize, even though we didn't write it for NewsArticle
-    println!("New article available! {}", article.summarize());
+    // We call summarize. The default implementation runs, 
+    // which internally calls our custom summarize_author.
+    println!("1 new post: {}", post.summarize());
 }
