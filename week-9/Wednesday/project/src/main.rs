@@ -1,18 +1,9 @@
-fn main() {
-    let ans;
-
-    let str1 = String::from("Small");
-    {
-        let str2 = String::from("Longer");
-        ans = longest(&str1, &str2);
-    }
-    println!("{:?}", ans)
+struct User<'a>{
+    name: &'a str
 }
 
-fn longest<'a>(a: &'a str, b: &'a str) -> &'a str {
-    if a.len() > b.len() {
-        return a;
-    } else {
-        return b;
-    }
+fn main(){
+    let first_name = String::from("Vatsal");
+    let user = User {name : &first_name};
+    println!("{:?}", user.name)
 }
